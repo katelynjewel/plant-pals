@@ -1,5 +1,4 @@
 import Landing from "./Landing"
-import Header from "./Header"
 import Main from "./Main"
 
 function App() {
@@ -9,7 +8,6 @@ function App() {
   return (
     <div>
       <Main/>
-      <Header/>
     </div>
   );
 }

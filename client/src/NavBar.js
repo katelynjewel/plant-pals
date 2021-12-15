@@ -4,18 +4,21 @@ function NavBar(){
 
   return(
     <div id='navbar'>
-      <Link className='navlinks' exact to="/home">
-          Home
-      </Link>
-      <Link className='navlinks' to="/listed-plants">
-          Listed Plants        
-      </Link>
-      <Link className='navlinks' to="/post-plant">
-          Post Plant 
-      </Link>
-      <button className="bttns" as={Link} to='/'>
-          Logout
-      </button>
+      <h1 id="header">Plant Pals</h1>
+        <ul className='navlinks'>
+          <li className='navlinks'><Link exact to="/home">
+              Home
+          </Link></li>
+          <li className='navlinks'><Link to="/listed-plants">
+              Listed Plants        
+          </Link></li>
+          <li className='navlinks'><Link to="/post-plant">
+              Post Plant 
+          </Link></li>
+          <li className='navlinks'><button as={Link} to='/'>
+              Logout
+          </button></li>
+        </ul>
     </div>
   )
 }

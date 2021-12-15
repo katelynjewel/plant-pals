@@ -1,8 +1,8 @@
 function Header() {
 
   return (
-    <div>
-      <h1>Header Here</h1>
+    <div id="header">
+      <h1>Plant Pals</h1>
     </div>
   )
 }
