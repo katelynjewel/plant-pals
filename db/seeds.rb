@@ -29,7 +29,6 @@ Plant.first.image.attach(
   filename: 'snake.jpg'
 )
 
-
 puts "👥 Creating trades..."
   Trade.create(
     buyer_id: User.first.id,  

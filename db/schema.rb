@@ -55,12 +55,12 @@ ActiveRecord::Schema.define(version: 2021_12_15_023627) do
   end
 
   create_table "trades", force: :cascade do |t|
-    t.bigint "buyers_id", null: false
-    t.bigint "sellers_id", null: false
+    t.bigint "buyer_id", null: false
+    t.bigint "seller_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["buyers_id"], name: "index_trades_on_buyers_id"
-    t.index ["sellers_id"], name: "index_trades_on_sellers_id"
+    t.index ["buyer_id"], name: "index_trades_on_buyer_id"
+    t.index ["seller_id"], name: "index_trades_on_seller_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -74,6 +74,6 @@ ActiveRecord::Schema.define(version: 2021_12_15_023627) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "plants", "users"
-  add_foreign_key "trades", "users", column: "buyers_id"
-  add_foreign_key "trades", "users", column: "sellers_id"
+  add_foreign_key "trades", "users", column: "buyer_id"
+  add_foreign_key "trades", "users", column: "seller_id"
 end
