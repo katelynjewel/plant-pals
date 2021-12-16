@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
   resources :trades
   resources :plants
-  resources :users
-  get "/hello", to: "application#hello_world"
+  resources :users, only: [:create, :index, :show]
+
+  get "/me", to: "users#show"
+
+  post "/signup", to: "users#create"
+
+  post "/login", to: "sessions#create"
+
+  delete "/logout", to: "sessions#destroy"
 
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 

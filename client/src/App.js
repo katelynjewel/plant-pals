@@ -1,15 +1,26 @@
+import { useEffect, useState } from 'react';
 import Landing from "./Landing"
 import Main from "./Main"
 
 function App() {
+  const [user, setUser] = useState(null)
 
-  <Landing/>
+  useEffect(() => {
+    fetch("/me").then((resp) => {
+      if (resp.ok) {
+        resp.json().then(setUser);
+      }
+    });
+  }, []);
+
+  if (!user) return <Landing onLogin={setUser}/>
 
   return (
     <div>
-      <Main/>
+      <Main user={user} setUser={setUser}/>
     </div>
   );
 }
 
 export default App;
+

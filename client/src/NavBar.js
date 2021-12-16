@@ -1,6 +1,18 @@
-import { Link } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 
-function NavBar(){
+function NavBar({onLogout}){
+  const history = useHistory();
+
+  function handleLogout(){
+    fetch('/logout',{
+      method: 'DELETE',
+    }).then((resp) => {
+      if (resp.ok) {
+          onLogout(null)
+      }
+      history.push("/");
+    })
+  }
 
   return(
     <div id='navbar'>
@@ -15,7 +27,7 @@ function NavBar(){
           <li className='navlinks'><Link to="/post-plant">
               Post Plant 
           </Link></li>
-          <li className='navlinks'><button as={Link} to='/'>
+          <li className='navlinks'><button as={Link} to='/' onClick={handleLogout}>
               Logout
           </button></li>
         </ul>

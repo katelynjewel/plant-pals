@@ -5,12 +5,12 @@ import Landing from "./Landing";
 import NavBar from "./NavBar";
 import Home from "./Home";
 
-function Main() {
+function Main({user, setUser}) {
 
   return (
     <div>
       <BrowserRouter>
-        <NavBar/>
+        <NavBar onLogout={setUser}/>
         <Switch>
           <Route exact path="/">
             <Landing/>
