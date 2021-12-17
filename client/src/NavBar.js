@@ -18,7 +18,7 @@ function NavBar({onLogout}){
     <div id='navbar'>
       <h1 id="header">Plant Pals</h1>
         <ul className='navlinks'>
-          <li className='navlinks'><Link exact to="/home">
+          <li className='navlinks'><Link to="/home">
               Home
           </Link></li>
           <li className='navlinks'><Link to="/listed-plants">

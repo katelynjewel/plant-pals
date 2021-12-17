@@ -1,6 +1,9 @@
 import { useState } from 'react'
+import { useHistory } from "react-router-dom"
 
 function SignUp({onLogin}) {
+  const [errors, setErrors] = useState([]);
+  const history = useHistory();
   const [newUser, setNewUser] = useState({
     username: '',
     email: '',
@@ -23,7 +26,12 @@ function SignUp({onLogin}) {
       body: JSON.stringify(userSignUp)
     })
     .then((resp) => {
+      if (resp.ok) {
       resp.json().then((user) => onLogin(user));
+      history.push("/home");
+      } else {
+        resp.json().then((data) => setErrors(data.errors))
+      }
     })
   }
 

@@ -1,8 +1,11 @@
-function PlantCard() {
+function PlantCard({plant : {name, price, sold, details, image} }) {
 
   return (
     <div>
-      <h3>Plant Card Here</h3>
+      <h4>{name}</h4>
+      <p>{price}</p>
+      <p>{details}</p>
+      <p>Available? {sold}</p>
     </div>
   )
 }

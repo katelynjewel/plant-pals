@@ -1,6 +1,9 @@
 import { useState } from 'react'
+import { useHistory } from "react-router-dom"
 
 function Login({onLogin}) {
+  const [erros, setErrors] = useState([]);
+  const history = useHistory();
   const [user, setUser] = useState({
     username: '',
     password: ''
@@ -21,7 +24,12 @@ function Login({onLogin}) {
       body: JSON.stringify(userLogin)
     })
     .then((resp) => {
-      resp.json().then((user) => onLogin(user));
+      if (resp.ok) {
+        resp.json().then((user) => onLogin(user));
+        history.push("/home");
+      } else {
+        resp.json().then((data) => setErrors(data.errors))
+      }
     })
   }
 

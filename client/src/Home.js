@@ -1,11 +1,11 @@
 import PlantContainer from "./PlantContainer"
 import Search from "./Search"
 
-function Home() {
+function Home({allPlants}) {
 
   return (
     <div>
-      <PlantContainer/>
+      <PlantContainer allPlants={allPlants}/>
       <Search/>
     </div>
   )

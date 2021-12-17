@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   resources :trades
-  resources :plants
-  resources :users, only: [:create, :index, :show]
-
-  get "/me", to: "users#show"
+  resources :plants, only: [:index, :create]
+  resources :users, only: [:index, :show, :create]
 
   post "/signup", to: "users#create"
+
+  get "/me", to: "users#show"
 
   post "/login", to: "sessions#create"
 
