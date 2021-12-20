@@ -1,13 +1,15 @@
 import ListedPlantCard from "./ListedPlantCard";
 import { Container } from 'semantic-ui-react'
 
-function ListedPlantContainer({user, allPlants}) {
+function ListedPlantContainer({user, allPlants, setAllPlants}) {
 
   if ((user.plants.length > 0)) {
-    const plantFilter = allPlants.map((plant) => <ListedPlantCard key={plant.id} plant={plant}/>)
+    const plantFilter = allPlants.filter((plant) => plant.user.id === user.id)
+    const plantMap = plantFilter.map((plant) => <ListedPlantCard key={plant.id} plant={plant} user={user} setAllPlants={setAllPlants}/>)
     return (
       <Container className="container">
-      {plantFilter}
+        <h3>Plants that you've listed:</h3>
+        {plantMap}
       </Container>
     )
   } else {

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :trades
-  resources :plants, only: [:index, :create, :update]
+  resources :plants, only: [:index, :show, :create, :update]
   resources :users, only: [:index, :show, :create]
 
   post "/signup", to: "users#create"

@@ -6,12 +6,15 @@ class PlantsController < ApplicationController
     render json: plants
   end
 
+  def show
+    plant = Plant.find(params[:id])
+    render json: plant, status: :ok
+  end
+
   def create
     plant = Plant.create!(plant_params)
     render json: plant, status: :created
   end
-
-
 
   def update
     plant = Plant.find(params[:id])

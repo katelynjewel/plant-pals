@@ -7,7 +7,7 @@ function AddPlant({user, setAllPlants}) {
     price: "",
     sold: false,
     details: "",
-    image: "",
+    image: null,
     user_id: user.id
   });
 
@@ -18,12 +18,21 @@ function AddPlant({user, setAllPlants}) {
     }))
   }
 
+  function handleFileChange(e){
+    setFormData((currentFormData) => ({
+      ...currentFormData,
+      image: e.target.files[0],
+    }))
+  }
+
   function handleSubmit(e){
     e.preventDefault()
+    let plantInfo = new FormData(e.target)
+      plantInfo.append("user_id", user.id)
+      plantInfo.append("sold", false)
     fetch(`/plants`, {
         method: "POST",
-        headers: {"Content-Type":"application/json"},
-        body:JSON.stringify(formData)
+        body:plantInfo
     })
     .then(resp => resp.json())
     .then(data => {
@@ -34,7 +43,7 @@ function AddPlant({user, setAllPlants}) {
         price: "",
         sold: false,
         details: "",
-        image: ""
+        image: null
       })
     })
   }
@@ -49,7 +58,7 @@ function AddPlant({user, setAllPlants}) {
         <br/>
         <label> Details: <input name="details" type="text" value={formData.details} onChange={handleChange} placeholder="Easy to care for!" ></input></label>
         <br/>
-        <label> Image: <input name="image" type="file" value={formData.image} onChange={handleChange} ></input></label>
+        <label> Image: <input name="image" type="file" onChange={handleFileChange} ></input></label>
         <br/>
         <Button className='bttns' type="submit">Submit</Button>
       </Form>
