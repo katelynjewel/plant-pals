@@ -3,6 +3,7 @@ class UserSerializer < ActiveModel::Serializer
 
   has_many :sold_trades
   has_many :sellers, through: :purchased_trades
+  has_many :plants
 end
 
 # has_many :following_user

@@ -12,7 +12,7 @@ function Main({user, setUser}) {
   useEffect(()=> {
     fetch('/plants')
     .then((resp)=> resp.json())
-    .then((plants) => console.log(plants))
+    .then((allPlants) => setAllPlants(allPlants))
   },[])
 
   return (
@@ -23,10 +23,10 @@ function Main({user, setUser}) {
             <Landing/>
           </Route>
           <Route exact path="/home">
-            <Home allPlants={allPlants}/>
+            <Home allPlants={allPlants} setAllPlants={setAllPlants}/>
           </Route>
           <Route exact path="/listed-plants">
-            <ListedPlantContainer/>
+            <ListedPlantContainer user={user} allPlants={allPlants}/>
           </Route>
           <Route exact path="/post-plant">
             <AddPlant/>

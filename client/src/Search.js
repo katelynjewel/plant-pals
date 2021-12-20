@@ -1,8 +1,13 @@
-function Search() {
+function Search({search, setSearch}) {
 
   return (
-    <div>
-      <h3>Find me</h3>
+    <div className="search">
+      <input 
+        type="text" 
+        value={search}
+        placeholder="Search..." 
+        onChange={(e) => setSearch(e.target.value)}
+      />
     </div>
   )
 }

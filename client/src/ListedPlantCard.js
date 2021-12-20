@@ -1,8 +1,12 @@
-function ListedPlantCard() {
+function ListedPlantCard({plant : {name, price, sold, details, image}}) {
 
   return (
-    <div>
-      <h3>Plant Cards go Here</h3>
+    <div className="plantcard">
+      {/* <img src={image} alt="plant"/> */}
+      <h4>{name}</h4>
+      <p>Price: {price}</p>
+      <p>{details}</p>
+      {/* <p>Available? {sold}</p> */}
     </div>
   )
 }
