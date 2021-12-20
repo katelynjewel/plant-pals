@@ -27,8 +27,8 @@ function SignUp({onLogin}) {
     })
     .then((resp) => {
       if (resp.ok) {
-      resp.json().then((user) => onLogin(user));
-      history.push("/home");
+        resp.json().then((user) => onLogin(user));
+        history.push("/home");
       } else {
         resp.json().then((data) => setErrors(data.errors))
       }
@@ -44,7 +44,6 @@ function SignUp({onLogin}) {
 
   return (
     <div>
-      <h3>Create an Account:</h3>
         <form onSubmit={handleSubmit} className='signup'>
           <label> Username: <input name='username' type='text' value={newUser.username} onChange={handleChange} placeholder='plant-lover'></input></label>
           <label> Email: <input name='email' type='text' value={newUser.email} onChange={handleChange} placeholder='plant-lover@example.com'></input></label>

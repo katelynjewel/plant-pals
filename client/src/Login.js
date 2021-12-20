@@ -42,7 +42,6 @@ function Login({onLogin}) {
 
   return (
     <div>
-      <h3>Sign in Here:</h3>
       <form onSubmit={handleSubmit} className='login'>
         <label> Username: <input name='username' type='text' value={user.username} onChange={handleChange} placeholder='plant-lover'></input></label>
         <label> Password: <input name='password' type='password' value={user.password} onChange={handleChange} placeholder='top-sercret'></input></label>

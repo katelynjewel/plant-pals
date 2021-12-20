@@ -1,5 +1,5 @@
 import { Button, Modal } from 'semantic-ui-react'
-// import "semantic-ui-css/semantic.min.css"
+import "fomantic-ui-css/semantic.min.css"
 import { useState } from 'react'
 import Login from "./Login"
 import SignUp from "./SignUp"
@@ -9,8 +9,8 @@ function Landing({onLogin}) {
   const [openSign, setOpenSign] = useState(false)
 
   return (
-    <div>
-      <Modal 
+    <div id='land'>
+      <Modal
         onClose={() => setOpenLog(false)}
         onOpen={() => setOpenLog(true)}
         header= {"Sign in Here"}
@@ -18,8 +18,7 @@ function Landing({onLogin}) {
         open={openLog}
         trigger={<Button>Login</Button>}
       />
-
-      <Modal 
+      <Modal
         onClose={() => setOpenSign(false)}
         onOpen={() => setOpenSign(true)}
         header= {"Create an Account"}
