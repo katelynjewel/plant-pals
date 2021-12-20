@@ -19,7 +19,7 @@ class PlantsController < ApplicationController
   private
   
   def plant_params
-    params.permit(:name, :image, :price, :sold, :details)
+    params.permit(:name, :image, :price, :sold, :details, :user_id)
   end 
 
 end

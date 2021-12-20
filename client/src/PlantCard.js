@@ -1,13 +1,17 @@
+import { Card, Image } from 'semantic-ui-react'
+
 function PlantCard({plant : {name, price, sold, details, image} }) {
 
   return (
-    <div className="plantcard">
-      {/* <img src={image} alt="plant"/> */}
-      <h4>{name}</h4>
-      <p>Price: {price}</p>
-      <p>{details}</p>
-      {/* <p>Available? {sold}</p> */}
-    </div>
+    <Card className="plantcard">
+      <Card.Content>
+        <Card.Header>{name}</Card.Header>
+        <Image src={image} alt="plant"/>
+        <Card.Description>Price: {price}</Card.Description>
+        <Card.Description>{details}</Card.Description>
+        {/* <p>Available? {sold}</p> */}
+      </Card.Content>
+    </Card>
   )
 }
 

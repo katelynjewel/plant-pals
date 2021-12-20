@@ -29,7 +29,7 @@ function Main({user, setUser}) {
             <ListedPlantContainer user={user} allPlants={allPlants}/>
           </Route>
           <Route exact path="/post-plant">
-            <AddPlant/>
+            <AddPlant user={user} setAllPlants={setAllPlants}/>
           </Route>
         </Switch>
     </div>

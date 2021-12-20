@@ -1,4 +1,6 @@
 import { Link, useHistory } from "react-router-dom"
+import { Button } from 'semantic-ui-react'
+
 
 function NavBar({onLogout}){
   const history = useHistory();
@@ -27,9 +29,9 @@ function NavBar({onLogout}){
           <li className='navlinks'><Link to="/post-plant">
               Post Plant 
           </Link></li>
-          <li className='navlinks'><button as={Link} to='/' onClick={handleLogout}>
+          <li className='navlinks'><Button as={Link} to='/' onClick={handleLogout}>
               Logout
-          </button></li>
+          </Button></li>
         </ul>
     </div>
   )

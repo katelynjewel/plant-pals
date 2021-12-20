@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useHistory } from "react-router-dom"
+import { Button, Form } from 'semantic-ui-react'
 
 function SignUp({onLogin}) {
   const [errors, setErrors] = useState([]);
@@ -44,12 +45,15 @@ function SignUp({onLogin}) {
 
   return (
     <div>
-        <form onSubmit={handleSubmit} className='signup'>
+        <Form onSubmit={handleSubmit} className='form'>
           <label> Username: <input name='username' type='text' value={newUser.username} onChange={handleChange} placeholder='plant-lover'></input></label>
+          <br/>
           <label> Email: <input name='email' type='text' value={newUser.email} onChange={handleChange} placeholder='plant-lover@example.com'></input></label>
+          <br/>
           <label> Password: <input name='password' type='password' value={newUser.password} onChange={handleChange} placeholder='top-sercret'></input></label>
-          <button className='bttns' type="submit">SignUp</button>
-        </form>
+          <br/>
+          <Button className='bttns' type="submit">SignUp</Button>
+        </Form>
     </div>
   )
 }
