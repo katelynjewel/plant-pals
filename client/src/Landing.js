@@ -18,6 +18,7 @@ function Landing({onLogin}) {
         open={openLog}
         trigger={<Button>Login</Button>}
       />
+      <br/>
       <Modal
         onClose={() => setOpenSign(false)}
         onOpen={() => setOpenSign(true)}

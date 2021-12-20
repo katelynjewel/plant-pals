@@ -79,6 +79,8 @@ li.navlinks {
 .container h3{
   font-family: 'Lemon', cursive;
   font-size: 2em;
+  display: flex;
+  justify-content: center;
 }
 
 .plantcard {

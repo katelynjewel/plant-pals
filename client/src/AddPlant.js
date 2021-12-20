@@ -28,6 +28,7 @@ function AddPlant({user, setAllPlants}) {
     .then(resp => resp.json())
     .then(data => {
       setAllPlants((current) => [data,...current])
+      console.log(data)
       setFormData({
         name: "",
         price: "",

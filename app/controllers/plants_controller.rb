@@ -1,4 +1,5 @@
 class PlantsController < ApplicationController
+  skip_before_action :authorize, only: :create
 
   def index
     plants = Plant.all 
@@ -6,9 +7,11 @@ class PlantsController < ApplicationController
   end
 
   def create
-    plant = Plant.create(plant_params)
+    plant = Plant.create!(plant_params)
     render json: plant, status: :created
   end
+
+
 
   def update
     plant = Plant.find(params[:id])
@@ -19,7 +22,7 @@ class PlantsController < ApplicationController
   private
   
   def plant_params
-    params.permit(:name, :image, :price, :sold, :details, :user_id)
+    params.permit(:name, :price, :sold, :details, :user_id, :image)
   end 
 
 end
