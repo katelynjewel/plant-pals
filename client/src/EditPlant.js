@@ -1,15 +1,13 @@
 import { Button, Form } from 'semantic-ui-react'
-import { useHistory } from "react-router-dom"
 import { useState } from "react"
 
-function EditPlant({plant, user, setAllPlants}) {
-  const history = useHistory();
+function EditPlant({plant, user, setUser, setAllPlants}) {
   const [formData, setFormData] = useState({
-    name: "",
-    price: "",
-    sold: false,
-    details: "",
-    image: null,
+    name: plant.name,
+    price: plant.price,
+    sold: plant.sold,
+    details: plant.details,
+    image: plant.image,
     user_id: user.id
   });
 
@@ -39,7 +37,6 @@ function EditPlant({plant, user, setAllPlants}) {
     .then(resp => resp.json())
     .then(data => {
       setAllPlants((current) => [data,...current])
-      console.log(data)
       setFormData({
         name: "",
         price: "",
@@ -47,7 +44,7 @@ function EditPlant({plant, user, setAllPlants}) {
         details: "",
         image: null
       })
-      history.push("/listed-plants")
+      setUser(data)
     })
   }
 

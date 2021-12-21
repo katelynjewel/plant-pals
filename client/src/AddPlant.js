@@ -1,7 +1,9 @@
 import { Button, Form } from 'semantic-ui-react'
+import { useHistory } from "react-router-dom"
 import { useState } from "react"
 
 function AddPlant({user, setAllPlants}) {
+  const history = useHistory();
   const [formData, setFormData] = useState({
     name: "",
     price: "",
@@ -45,6 +47,7 @@ function AddPlant({user, setAllPlants}) {
         details: "",
         image: null
       })
+      history.push("/listed-plants");
     })
   }
 
