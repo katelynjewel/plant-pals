@@ -1,10 +1,10 @@
-import { Route, Switch} from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import ListedPlantContainer from "./ListedPlantContainer";
-import AddPlant from "./AddPlant";
-import Landing from "./Landing";
-import NavBar from "./NavBar";
-import Home from "./Home";
+import { Route, Switch} from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import ListedPlantContainer from './ListedPlantContainer'
+import AddPlant from './AddPlant'
+import Landing from './Landing'
+import NavBar from './NavBar'
+import Home from './Home'
 
 function Main({user, setUser}) {
   const [allPlants, setAllPlants] = useState([])
@@ -19,16 +19,16 @@ function Main({user, setUser}) {
     <div>
         <NavBar onLogout={setUser}/>
         <Switch>
-          <Route exact path="/">
+          <Route exact path='/'>
             <Landing/>
           </Route>
-          <Route exact path="/home">
+          <Route exact path='/home'>
             <Home allPlants={allPlants} setAllPlants={setAllPlants}/>
           </Route>
-          <Route exact path="/listed-plants">
+          <Route exact path='/listed-plants'>
             <ListedPlantContainer user={user} allPlants={allPlants} setAllPlants={setAllPlants}/>
           </Route>
-          <Route exact path="/post-plant">
+          <Route exact path='/post-plant'>
             <AddPlant user={user} setAllPlants={setAllPlants}/>
           </Route>
         </Switch>

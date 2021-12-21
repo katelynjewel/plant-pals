@@ -1,6 +1,6 @@
-import { useState } from "react"
-import PlantContainer from "./PlantContainer"
-import Search from "./Search"
+import { useState } from 'react'
+import PlantContainer from './PlantContainer'
+import SearchBar from './SearchBar'
 
 function Home({allPlants, setAllPlants}) {
   const [search, setSearch] = useState("")
@@ -13,7 +13,7 @@ function Home({allPlants, setAllPlants}) {
 
   return (
     <div>
-      <Search search={search} setSearch={setSearch} setAllPlants={setAllPlants}/>
+      <SearchBar search={search} setSearch={setSearch} setAllPlants={setAllPlants}/>
       <PlantContainer allPlants={filterPlants}/>
     </div>
   )

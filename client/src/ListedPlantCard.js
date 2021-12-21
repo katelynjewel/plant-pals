@@ -6,18 +6,18 @@ function ListedPlantCard({setAllPlants, plant, user, setUser, plant : {name, pri
   const [open, setOpen] = useState(false)
 
   return (
-    <Card className="plantcard">
+    <Card className='plantcard'>
       <Card.Content>
         <Card.Header>{name}</Card.Header>
-        <Image src={image} alt="plant"/>
+        <Image src={image} alt='plant'/>
         <Card.Description>Price: {price}</Card.Description>
         <Card.Description>{details}</Card.Description>
-        <p>Available? {sold}</p>
+        {/* <Card.Content extra> {sold}</Card.Content> */}
       </Card.Content>
       <Modal
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
-        header= {"Edit Plant"}
+        header= {'Edit Plant Here:'}
         content = {<EditPlant plant={plant} user={user} setUser={setUser} setAllPlants={setAllPlants}/>}
         open={open}
         trigger={<Button>Edit</Button>}

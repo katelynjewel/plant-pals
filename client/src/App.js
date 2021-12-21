@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import Landing from "./Landing"
-import Main from "./Main"
+import { useEffect, useState } from 'react'
+import Landing from './Landing'
+import Main from './Main'
 
 function App() {
   const [user, setUser] = useState(null)

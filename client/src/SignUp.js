@@ -1,5 +1,5 @@
-import { Button, Form } from 'semantic-ui-react'
-import { useHistory } from "react-router-dom"
+import { Button, Form, Input } from 'semantic-ui-react'
+import { useHistory } from 'react-router-dom'
 import { useState } from 'react'
 
 function SignUp({onLogin}) {
@@ -29,7 +29,7 @@ function SignUp({onLogin}) {
     .then((resp) => {
       if (resp.ok) {
         resp.json().then((user) => onLogin(user));
-        history.push("/home");
+        history.push('/home');
       } else {
         resp.json().then((data) => setErrors(data.errors))
       }
@@ -41,20 +41,18 @@ function SignUp({onLogin}) {
       ...currentUsers,
       [e.target.name]: e.target.value
     }))
-}
+  }
 
   return (
-    <div>
-        <Form onSubmit={handleSubmit} className='form'>
-          <label> Username: <input name='username' type='text' value={newUser.username} onChange={handleChange} placeholder='plant-lover'></input></label>
-          <br/>
-          <label> Email: <input name='email' type='text' value={newUser.email} onChange={handleChange} placeholder='plant-lover@example.com'></input></label>
-          <br/>
-          <label> Password: <input name='password' type='password' value={newUser.password} onChange={handleChange} placeholder='top-sercret'></input></label>
-          <br/>
-          <Button className='bttns' type="submit">SignUp</Button>
-        </Form>
-    </div>
+    <Form onSubmit={handleSubmit}>
+      <label> Username: <Input name='username' type='text' value={newUser.username} onChange={handleChange} placeholder='plant-lover'/></label>
+        <br/>
+      <label> Email: <Input name='email' type='text' value={newUser.email} onChange={handleChange} placeholder='plant-lover@example.com'/></label>
+        <br/>
+      <label> Password: <Input name='password' type='password' value={newUser.password} onChange={handleChange} placeholder='top-sercret'/></label>
+        <br/>
+      <Button className='bttns' type='submit'>SignUp</Button>
+    </Form>
   )
 }
 

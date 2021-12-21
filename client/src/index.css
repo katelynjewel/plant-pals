@@ -13,35 +13,36 @@
 }  */
 
 /* Forms */
-#form {
+.form {
   display: flex;
   flex-direction: column; 
-  justify-content: center;
   align-items: center;
-  padding: 6em;
 }
 
-#form input {
+.form input {
   margin: 3%;
   justify-content: center;
 }
 
-#form h3 {
+.form h3 {
   font-family: 'Lemon', cursive;
   font-size: 2em;
+  padding: 2%;
 }
 
 /* Search */
 .search {
   display: flex;
   justify-content: right; 
-  padding-right: 4%;
+  padding-top: 1.5%;
+  padding-right: 2%;
 }
 
 /* Header and NavBar */
 #header{
   display: flex;    
   justify-content: center;
+  color: #edf6f9;
   padding: 2%;
   font-size: 3em;
   font-family: 'Lemon', cursive;
@@ -49,37 +50,21 @@
 
 #navbar{
   background-color: #B48C64;
-  color: #edf6f9;
-  width: 100%;
 } 
 
 .navlinks {
-  text-align: center;
   display: flex;
   justify-content: center;
-}
-
-li.navlinks {
-  list-style: none;
-  font-size: 1em;   
-  padding-left: 5%; 
-  padding-right: 5%;
-  padding-bottom: 1%;
+  font-size: 1em;
   font-family: 'Raleway', sans-serif;
 }
 
 /* Container and Cards */
-/* .container {
-
-} */
 
 .container h3{
   font-family: 'Lemon', cursive;
   font-size: 2em;
+  padding: 4%;
   display: flex;
   justify-content: center;
 }
-
-/* .plantcard {
-
-}  */

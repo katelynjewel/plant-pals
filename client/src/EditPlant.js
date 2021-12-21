@@ -1,5 +1,5 @@
-import { Button, Form } from 'semantic-ui-react'
-import { useState } from "react"
+import { Button, Form, Input } from 'semantic-ui-react'
+import { useState } from 'react'
 
 function EditPlant({plant, user, setUser, setAllPlants}) {
   const [formData, setFormData] = useState({
@@ -28,10 +28,10 @@ function EditPlant({plant, user, setUser, setAllPlants}) {
   function handleSubmit(e){
     e.preventDefault()
     let plantInfo = new FormData(e.target)
-      plantInfo.append("user_id", user.id)
-      plantInfo.append("sold", false)
+      plantInfo.append('user_id', user.id)
+      plantInfo.append('sold', false)
     fetch(`/plants/${plant.id}`, {
-        method: "PATCH",
+        method: 'PATCH',
         body:plantInfo
     })
     .then(resp => resp.json())
@@ -40,7 +40,7 @@ function EditPlant({plant, user, setUser, setAllPlants}) {
       setFormData({
         name: "",
         price: "",
-        sold: false,
+        sold: "",
         details: "",
         image: null
       })
@@ -51,17 +51,18 @@ function EditPlant({plant, user, setUser, setAllPlants}) {
 
   return (
     <div>
-      <h3>Edit Plants Here</h3>
-      <Form onSubmit={handleSubmit} className="add">
-        <label> Plant Name: <input name="name" type="text" value={formData.name} onChange={handleChange} placeholder="Snake Plant" ></input></label>
-        <br/>
-        <label> Price: <input name="price" type="number" value={formData.price} onChange={handleChange} placeholder="35" ></input></label>
-        <br/>
-        <label> Details: <input name="details" type="text" value={formData.details} onChange={handleChange} placeholder="Easy to care for!" ></input></label>
-        <br/>
-        <label> Image: <input name="image" type="file" onChange={handleFileChange} ></input></label>
-        <br/>
-        <Button className='bttns' type="submit">Submit</Button>
+      <Form onSubmit={handleSubmit} className='form'>
+        <label> Plant Name: <Input name='name' type='text' value={formData.name} onChange={handleChange} placeholder='Snake Plant' /></label>
+          <br/>
+        <label> Price: <Input name='price' type='number' value={formData.price} onChange={handleChange} placeholder='35' /></label>
+          <br/>
+        <label> Details: <Input name='details' type='text' value={formData.details} onChange={handleChange} placeholder='Easy to care for!' /></label>
+          <br/>
+        {/* <label> Sold? <Input name='sold' type='checkbox' value={formData.sold} onChange={handleChange} /></label> */}
+          <br/>
+        <label> Image: <Input name='image' type='file' onChange={handleFileChange} /></label>
+          <br/>
+        <Button className='bttns' type='submit'>Submit</Button>
       </Form>
     </div>
   )

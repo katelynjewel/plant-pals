@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { useHistory } from "react-router-dom"
-import { Button, Form } from 'semantic-ui-react'
+import { Button, Form, Input } from 'semantic-ui-react'
 
 function Login({onLogin}) {
-  const [erros, setErrors] = useState([]);
+  const [errors, setErrors] = useState([]);
   const history = useHistory();
   const [user, setUser] = useState({
     username: '',
@@ -27,7 +27,7 @@ function Login({onLogin}) {
     .then((resp) => {
       if (resp.ok) {
         resp.json().then((user) => onLogin(user));
-        history.push("/home");
+        history.push('/home');
       } else {
         resp.json().then((data) => setErrors(data.errors))
       }
@@ -42,15 +42,13 @@ function Login({onLogin}) {
   }
 
   return (
-    <div>
-      <Form onSubmit={handleSubmit} className='form'>
-        <label> Username: <input name='username' type='text' value={user.username} onChange={handleChange} placeholder='plant-lover'></input></label>
+    <Form onSubmit={handleSubmit} >
+      <label> Username: <Input name='username' type='text' value={user.username} onChange={handleChange} placeholder='plant-lover'/></label>
         <br/>
-        <label> Password: <input name='password' type='password' value={user.password} onChange={handleChange} placeholder='top-sercret'></input></label>
+      <label> Password: <Input name='password' type='password' value={user.password} onChange={handleChange} placeholder='top-sercret'/></label>
         <br/>
-        <Button className='bttns' type="submit">Signin</Button>
-      </Form>
-    </div>
+      <Button className='bttns' type='submit'>Sign-In</Button>
+    </Form>
   )
 }
 

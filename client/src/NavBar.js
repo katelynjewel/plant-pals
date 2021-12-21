@@ -1,6 +1,5 @@
-import { Link, useHistory } from "react-router-dom"
-import { Button } from 'semantic-ui-react'
-
+import { Link, useHistory } from 'react-router-dom'
+import { Button, Menu, Item } from 'semantic-ui-react'
 
 function NavBar({onLogout}){
   const history = useHistory();
@@ -18,21 +17,21 @@ function NavBar({onLogout}){
 
   return(
     <div id='navbar'>
-      <h1 id="header">Plant Pals</h1>
-        <ul className='navlinks'>
-          <li className='navlinks'><Link to="/home">
+      <h1 id='header'>Plant Pals</h1>
+        <Menu className='navlinks'>
+          <Item className='navlinks'><Link to='/home'>
               Home
-          </Link></li>
-          <li className='navlinks'><Link to="/listed-plants">
+          </Link></Item>
+          <Item className='navlinks'><Link to='/listed-plants'>
               Listed Plants        
-          </Link></li>
-          <li className='navlinks'><Link to="/post-plant">
+          </Link></Item>
+          <Item className='navlinks'><Link to='/post-plant'>
               Post Plant 
-          </Link></li>
-          <li className='navlinks'><Button as={Link} to='/' onClick={handleLogout}>
+          </Link></Item>
+          <Item className='navlinks'><Button as={Link} to='/' onClick={handleLogout}>
               Logout
-          </Button></li>
-        </ul>
+          </Button></Item>
+        </Menu>
     </div>
   )
 }
