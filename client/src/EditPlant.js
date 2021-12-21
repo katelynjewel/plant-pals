@@ -1,7 +1,7 @@
 import { Button, Form, Input } from 'semantic-ui-react'
 import { useState } from 'react'
 
-function EditPlant({plant, user, setUser, setAllPlants}) {
+function EditPlant({plant, user, setAllPlants}) {
   const [formData, setFormData] = useState({
     name: plant.name,
     price: plant.price,
@@ -36,7 +36,7 @@ function EditPlant({plant, user, setUser, setAllPlants}) {
     })
     .then(resp => resp.json())
     .then(data => {
-      setAllPlants((current) => [data,...current])
+      setAllPlants((current) => [...current])
       setFormData({
         name: "",
         price: "",
@@ -44,7 +44,6 @@ function EditPlant({plant, user, setUser, setAllPlants}) {
         details: "",
         image: null
       })
-      setUser(data)
     })
   }
 

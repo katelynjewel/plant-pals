@@ -55,9 +55,9 @@ function AddPlant({user, setAllPlants}) {
     <div className='form'>
       <h3>Post Plants Here</h3>
       <Form onSubmit={handleSubmit}>
-        <label> Plant Name: <Input name='name' type='text' value={formData.name} onChange={handleChange} placeholder='Snake Plant' /></label>
+        <label> Plant Name: <Input name='name' type='text' value={formData.name} onChange={handleChange} placeholder='Snake Plant' required/></label>
           <br/>
-        <label> Price: <Input name='price' type='number' value={formData.price} onChange={handleChange} placeholder='35' /></label>
+        <label> Price: <Input name='price' type='number' value={formData.price} onChange={handleChange} placeholder='35' required/></label>
           <br/>
         <label> Details: <Input name='details' type='text' value={formData.details} onChange={handleChange} placeholder='Easy to care for!' /></label>
           <br/>

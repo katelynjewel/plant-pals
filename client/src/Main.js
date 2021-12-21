@@ -23,10 +23,10 @@ function Main({user, setUser}) {
             <Landing/>
           </Route>
           <Route exact path='/home'>
-            <Home allPlants={allPlants} setAllPlants={setAllPlants}/>
+            <Home allPlants={allPlants} />
           </Route>
           <Route exact path='/listed-plants'>
-            <ListedPlantContainer user={user} allPlants={allPlants} setAllPlants={setAllPlants}/>
+            <ListedPlantContainer user={user} allPlants={allPlants} setAllPlants={setAllPlants} />
           </Route>
           <Route exact path='/post-plant'>
             <AddPlant user={user} setAllPlants={setAllPlants}/>

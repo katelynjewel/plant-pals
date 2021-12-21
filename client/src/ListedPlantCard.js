@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Card, Image, Modal, Button } from 'semantic-ui-react'
 import EditPlant from './EditPlant'
 
-function ListedPlantCard({setAllPlants, plant, user, setUser, plant : {name, price, sold, details, image}}) {
+function ListedPlantCard({setAllPlants, plant, user, plant : {name, price, sold, details, image}}) {
   const [open, setOpen] = useState(false)
 
   return (
@@ -18,7 +18,7 @@ function ListedPlantCard({setAllPlants, plant, user, setUser, plant : {name, pri
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
         header= {'Edit Plant Here:'}
-        content = {<EditPlant plant={plant} user={user} setUser={setUser} setAllPlants={setAllPlants}/>}
+        content = {<EditPlant plant={plant} user={user} setAllPlants={setAllPlants}/>}
         open={open}
         trigger={<Button>Edit</Button>}
       />

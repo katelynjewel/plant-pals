@@ -2,7 +2,7 @@ import { useState } from 'react'
 import PlantContainer from './PlantContainer'
 import SearchBar from './SearchBar'
 
-function Home({allPlants, setAllPlants}) {
+function Home({ allPlants }) {
   const [search, setSearch] = useState("")
 
   const filterPlants = allPlants.filter(plant => {
@@ -13,7 +13,7 @@ function Home({allPlants, setAllPlants}) {
 
   return (
     <div>
-      <SearchBar search={search} setSearch={setSearch} setAllPlants={setAllPlants}/>
+      <SearchBar search={search} setSearch={setSearch} />
       <PlantContainer allPlants={filterPlants}/>
     </div>
   )
