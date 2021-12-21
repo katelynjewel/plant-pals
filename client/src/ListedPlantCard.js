@@ -5,6 +5,8 @@ import EditPlant from './EditPlant'
 function ListedPlantCard({setAllPlants, plant, user, plant : {name, price, sold, details, image}}) {
   const [open, setOpen] = useState(false)
 
+  const avaialable = sold.toString() 
+
   return (
     <Card className='plantcard'>
       <Card.Content>
@@ -12,7 +14,7 @@ function ListedPlantCard({setAllPlants, plant, user, plant : {name, price, sold,
         <Image src={image} alt='plant'/>
         <Card.Description>Price: {price}</Card.Description>
         <Card.Description>{details}</Card.Description>
-        {/* <Card.Content extra> {sold}</Card.Content> */}
+        <Card.Content extra>{avaialable}</Card.Content>
       </Card.Content>
       <Modal
         onClose={() => setOpen(false)}

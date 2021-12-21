@@ -47,7 +47,6 @@ function EditPlant({plant, user, setAllPlants}) {
     })
   }
 
-
   return (
     <div>
       <Form onSubmit={handleSubmit} className='form'>
@@ -57,7 +56,7 @@ function EditPlant({plant, user, setAllPlants}) {
           <br/>
         <label> Details: <Input name='details' type='text' value={formData.details} onChange={handleChange} placeholder='Easy to care for!' /></label>
           <br/>
-        {/* <label> Sold? <Input name='sold' type='checkbox' value={formData.sold} onChange={handleChange} /></label> */}
+        <label> Available: <Input name='sold' type='checkbox' value={formData.sold} onChange={handleChange} /></label>
           <br/>
         <label> Image: <Input name='image' type='file' onChange={handleFileChange} /></label>
           <br/>

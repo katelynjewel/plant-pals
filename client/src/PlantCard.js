@@ -1,6 +1,8 @@
 import { Card, Image } from 'semantic-ui-react'
 
 function PlantCard({plant : {name, price, sold, details, image} }) {
+  
+  const avaialable = sold.toString() 
 
   return (
       <Card className='plantcard'>
@@ -9,7 +11,7 @@ function PlantCard({plant : {name, price, sold, details, image} }) {
           <Image src={image} alt='plant'/>
           <Card.Description>Price: {price}</Card.Description>
           <Card.Description>{details}</Card.Description>
-          {/* <p>Available? {sold}</p> */}
+          <Card.Content extra>{avaialable}</Card.Content>
         </Card.Content>
       </Card>
   )
