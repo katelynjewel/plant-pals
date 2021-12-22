@@ -25,6 +25,15 @@ function EditPlant({plant, user, setAllPlants}) {
     }))
   }
 
+  function handleCheck(e){
+    if (!e.target.checked) {
+      setFormData({ ...formData, [e.target.name]: false });
+    } else if (e.target.checked) {
+      setFormData({ ...formData, [e.target.name]: true });
+    }
+    console.log(e.target.checked)
+  }
+
   function handleSubmit(e){
     e.preventDefault()
     let plantInfo = new FormData(e.target)
@@ -36,7 +45,7 @@ function EditPlant({plant, user, setAllPlants}) {
     })
     .then(resp => resp.json())
     .then(data => {
-      setAllPlants((current) => current.map((plant) => plant.user.id === user.id))
+      setAllPlants((current) => [data, ...current])
       setFormData({
         name: "",
         price: "",
@@ -56,7 +65,7 @@ function EditPlant({plant, user, setAllPlants}) {
           <br/>
         <label> Details: <Input name='details' type='text' value={formData.details} onChange={handleChange} placeholder='Easy to care for!' /></label>
           <br/>
-        <label> Available: <Input name='sold' type='checkbox' value={formData.sold} onChange={handleChange} /></label>
+        <label> Mark as Sold: <Input name='sold' type='checkbox' checked={formData.sold} onClick={handleCheck} /></label>
           <br/>
         <label> Image: <Input name='image' type='file' onChange={handleFileChange} /></label>
           <br/>

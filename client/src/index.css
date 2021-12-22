@@ -30,6 +30,13 @@
   padding: 2%;
 }
 
+.form-landing {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  padding-top: 25%;
+}
+
 /* Search */
 .search {
   display: flex;
@@ -67,5 +74,15 @@
   padding: 4%;
   display: flex;
   justify-content: center;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+}
+
+.plantcard{
+  display: flex;
+  align-items: right;
 }
 

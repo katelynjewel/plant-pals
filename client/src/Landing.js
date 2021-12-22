@@ -9,7 +9,7 @@ function Landing({onLogin}) {
   const [openSign, setOpenSign] = useState(false)
 
   return (
-    <div className='form'>
+    <div className='form-landing'>
       <Modal
         onClose={() => setOpenLog(false)}
         onOpen={() => setOpenLog(true)}

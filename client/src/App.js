@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import 'semantic-ui-css/semantic.min.css'
 import Landing from './Landing'
 import Main from './Main'
 
