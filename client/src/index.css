@@ -57,10 +57,10 @@
   justify-content: center;
   font-size: 1em;
   font-family: 'Raleway', sans-serif;
+  color: #0A4131;
 }
 
 /* Container and Cards */
-
 .container h3{
   font-family: 'Lemon', cursive;
   font-size: 2em;
@@ -69,7 +69,3 @@
   justify-content: center;
 }
 
-.plantcard {
-  display: flex;
-  justify-content: center;
-}
