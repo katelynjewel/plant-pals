@@ -14,7 +14,7 @@ function ListedPlantCard({setAllPlants, plant, user, plant : {name, price, sold,
         <Image src={image} alt='plant'/>
         <Card.Description>Price: {price}</Card.Description>
         <Card.Description>{details}</Card.Description>
-        <Card.Content>Available? {avaialable}</Card.Content>
+        <Card.Content> Sold? {avaialable}</Card.Content>
       </Card.Content>
       <Modal
         onClose={() => setOpen(false)}

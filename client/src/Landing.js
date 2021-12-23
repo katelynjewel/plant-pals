@@ -1,5 +1,5 @@
 import { Button, Modal } from 'semantic-ui-react'
-import "fomantic-ui-css/semantic.min.css"
+import 'fomantic-ui-css/semantic.min.css'
 import { useState } from 'react'
 import Login from './Login'
 import SignUp from './SignUp'

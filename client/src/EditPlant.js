@@ -9,7 +9,7 @@ function EditPlant({plant, user, setAllPlants}) {
     details: plant.details,
     image: plant.image,
     user_id: user.id
-  });
+  })
 
   function handleChange(e) {
     setFormData((current) => ({
@@ -26,19 +26,13 @@ function EditPlant({plant, user, setAllPlants}) {
   }
 
   function handleCheck(e){
-    if (!e.target.checked) {
-      setFormData({ ...formData, [e.target.name]: false });
-    } else if (e.target.checked) {
-      setFormData({ ...formData, [e.target.name]: true });
-    }
-    console.log(e.target.checked)
+      setFormData((current) => ({ ...current, [e.target.name]: !current.sold }))
   }
 
   function handleSubmit(e){
     e.preventDefault()
     let plantInfo = new FormData(e.target)
       plantInfo.append('user_id', user.id)
-      plantInfo.append('sold', false)
     fetch(`/plants/${plant.id}`, {
         method: 'PATCH',
         body:plantInfo
@@ -46,6 +40,8 @@ function EditPlant({plant, user, setAllPlants}) {
     .then(resp => resp.json())
     .then(data => {
       setAllPlants((current) => [data, ...current])
+      // in theory this will map through the currentPlants and compare their id's to the one just updated - what next? 
+      // setAllPlants(currentPlants.map((current) => current.id === data.id)
       setFormData({
         name: "",
         price: "",
@@ -57,7 +53,6 @@ function EditPlant({plant, user, setAllPlants}) {
   }
 
   return (
-    <div>
       <Form onSubmit={handleSubmit} className='form'>
         <label> Plant Name: <Input name='name' type='text' value={formData.name} onChange={handleChange} placeholder='Snake Plant' /></label>
           <br/>
@@ -71,7 +66,6 @@ function EditPlant({plant, user, setAllPlants}) {
           <br/>
         <Button className='bttns' type='submit'>Submit</Button>
       </Form>
-    </div>
   )
 }
 
