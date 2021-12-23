@@ -1,9 +1,7 @@
 import { Button, Form, Input } from 'semantic-ui-react'
-import { useHistory } from 'react-router-dom'
 import { useState } from 'react'
 
 function EditPlant({plant, user, setAllPlants}) {
-  const history = useHistory()
   const [formData, setFormData] = useState({
     name: plant.name,
     price: plant.price,
@@ -42,8 +40,13 @@ function EditPlant({plant, user, setAllPlants}) {
     .then(resp => resp.json())
     .then(data => {
       setAllPlants((current) => [data, ...current])
-      // in theory this will map through the currentPlants and compare their id's to the one just updated - what next? 
-      // setAllPlants(currentPlants.map((current) => current.id === data.id)
+      
+      // const foundPlant = allPlants.find(plant => plant.id === plant.id)
+      // const newFoundPlant = {
+      //   ...foundPlant,
+      // }
+      // setAllPlants((currentPlants) => currentPlants.map((currentPlant) => currentPlant.id === plant.id ? {...currentPlant, } : p))
+
       setFormData({
         name: "",
         price: "",
@@ -51,7 +54,6 @@ function EditPlant({plant, user, setAllPlants}) {
         details: "",
         image: null
       })
-      history.push('/listed-plants')
     })
   }
 
