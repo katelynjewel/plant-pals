@@ -9,7 +9,7 @@ function ListedPlantContainer({user, allPlants, setAllPlants}) {
     return (
       <>
         <Container className='container'>
-          <h3>Plants that you've listed:</h3>
+          <h3>Plants that you've listed</h3>
           {plantMap}
         </Container>
       </>

@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom"
 import { Button, Form, Input } from 'semantic-ui-react'
 
 function Login({onLogin}) {
-  const [errors, setErrors] = useState([]);
+  const [errors, setErrors] = useState([])
   const history = useHistory();
   const [user, setUser] = useState({
     username: '',
@@ -26,8 +26,8 @@ function Login({onLogin}) {
     })
     .then((resp) => {
       if (resp.ok) {
-        resp.json().then((user) => onLogin(user));
-        history.push('/home');
+        resp.json().then((user) => onLogin(user))
+        history.push('/home')
       } else {
         resp.json().then((data) => setErrors(data.errors))
       }

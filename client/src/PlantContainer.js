@@ -7,7 +7,7 @@ function PlantContainer({allPlants}) {
 
   return (
     <Container className='container'>
-      <h3>Plants:</h3>
+      <h3>Plants</h3>
       {renderPlants}
     </Container>
   )

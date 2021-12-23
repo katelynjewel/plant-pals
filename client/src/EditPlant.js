@@ -1,7 +1,9 @@
 import { Button, Form, Input } from 'semantic-ui-react'
+import { useHistory } from 'react-router-dom'
 import { useState } from 'react'
 
 function EditPlant({plant, user, setAllPlants}) {
+  const history = useHistory()
   const [formData, setFormData] = useState({
     name: plant.name,
     price: plant.price,
@@ -49,6 +51,7 @@ function EditPlant({plant, user, setAllPlants}) {
         details: "",
         image: null
       })
+      history.push('/listed-plants')
     })
   }
 

@@ -10,8 +10,8 @@ function App() {
       if (resp.ok) {
         resp.json().then(setUser);
       }
-    });
-  }, []);
+    })
+  }, [])
 
   if (!user) return <Landing onLogin={setUser}/>
 
@@ -19,7 +19,7 @@ function App() {
     <div>
       <Main user={user} setUser={setUser}/>
     </div>
-  );
+  )
 }
 
 export default App;

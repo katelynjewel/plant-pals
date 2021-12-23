@@ -2,7 +2,7 @@ import { Link, useHistory } from 'react-router-dom'
 import { Button, Menu, Item } from 'semantic-ui-react'
 
 function NavBar({onLogout}){
-  const history = useHistory();
+  const history = useHistory()
 
   function handleLogout(){
     fetch('/logout',{
