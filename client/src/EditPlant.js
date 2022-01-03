@@ -39,14 +39,7 @@ function EditPlant({plant, user, setAllPlants}) {
     })
     .then(resp => resp.json())
     .then(data => {
-      setAllPlants((current) => [data, ...current])
-      
-      // const foundPlant = allPlants.find(plant => plant.id === plant.id)
-      // const newFoundPlant = {
-      //   ...foundPlant,
-      // }
-      // setAllPlants((currentPlants) => currentPlants.map((currentPlant) => currentPlant.id === plant.id ? {...currentPlant, } : p))
-
+      setAllPlants((currentPlants) => currentPlants.map((currentPlant) => currentPlant.id === data.id ? data : currentPlant))
       setFormData({
         name: "",
         price: "",

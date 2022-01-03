@@ -8,23 +8,25 @@ function ListedPlantCard({setAllPlants, plant, user, plant : {name, price, sold,
   const avaialable = sold.toString() 
 
   return (
-    <Card className='plantcard'>
-      <Card.Content>
-        <Card.Header>{name}</Card.Header>
-        <Image src={image} alt='plant'/>
-        <Card.Description>Price: {price}</Card.Description>
-        <Card.Description>{details}</Card.Description>
-        <Card.Content> Sold? {avaialable}</Card.Content>
-      </Card.Content>
-      <Modal
-        onClose={() => setOpen(false)}
-        onOpen={() => setOpen(true)}
-        header= {'Edit Plant Here:'}
-        content = {<EditPlant plant={plant} user={user} setAllPlants={setAllPlants}/>}
-        open={open}
-        trigger={<Button>Edit</Button>}
-      />
-    </Card>
+    <Card.Group centered itemsPerRow={'three'}>
+      <Card raised className='plantcard'>
+        <Card.Content>
+          <Image src={image} alt='plant'/>
+          <Card.Header>{name}</Card.Header>
+          <Card.Meta>Price: {price}</Card.Meta>
+          <Card.Description>{details}</Card.Description>
+          <Card.Content extra> Sold? {avaialable}</Card.Content>
+        </Card.Content>
+        <Modal
+          onClose={() => setOpen(false)}
+          onOpen={() => setOpen(true)}
+          header= {'Edit Plant Here:'}
+          content = {<EditPlant plant={plant} user={user} setAllPlants={setAllPlants}/>}
+          open={open}
+          trigger={<Button>Edit</Button>}
+        />
+      </Card>
+    </Card.Group>
   )
 }
 

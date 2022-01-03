@@ -1,4 +1,4 @@
-import { Container } from 'semantic-ui-react'
+import { Card, Container } from 'semantic-ui-react'
 import ListedPlantCard from './ListedPlantCard'
 
 function ListedPlantContainer({user, allPlants, setAllPlants}) {
