@@ -53,15 +53,23 @@ function AddPlant({user, setAllPlants}) {
   return (
     <div className='form'>
       <h3>Post Plants Here</h3>
-      <Form onSubmit={handleSubmit}>
-        <label> Plant Name: <Input name='name' type='text' value={formData.name} onChange={handleChange} placeholder='Snake Plant' required/></label>
-          <br/>
-        <label> Price: <Input name='price' type='number' value={formData.price} onChange={handleChange} placeholder='35' required/></label>
-          <br/>
-        <label> Details: <Input name='details' type='text' value={formData.details} onChange={handleChange} placeholder='Easy to care for!' /></label>
-          <br/>
-        <label> Image: <Input name='image' type='file' onChange={handleFileChange} /></label>
-          <br/>
+      <Form size={'big'} onSubmit={handleSubmit} >
+        <Form.Field>
+          <label> Plant Name: </label>
+          <Input name='name' type='text' value={formData.name} onChange={handleChange} placeholder='Snake Plant' required/>
+        </Form.Field>
+        <Form.Field>
+          <label> Price: </label>
+          <Input name='price' type='number' value={formData.price} onChange={handleChange} placeholder='35' required/>
+        </Form.Field>
+        <Form.Field>
+          <label> Details: </label>
+          <Input name='details' type='text' value={formData.details} onChange={handleChange} placeholder='Easy to care for!' />
+        </Form.Field>
+        <Form.Field>
+          <label> Image: </label>
+          <Input name='image' type='file' onChange={handleFileChange} />
+        </Form.Field>
         <Button className='bttns' type='submit'>Submit</Button>
       </Form>
     </div>

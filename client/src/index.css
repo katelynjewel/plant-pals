@@ -19,15 +19,11 @@
   align-items: center;
 }
 
-.form input {
-  margin: 3%;
-  justify-content: center;
-}
-
 .form h3 {
   font-family: 'Lemon', cursive;
   font-size: 2em;
   padding: 3%;
+  padding-top: 8%;
 }
 
 .form-landing {
@@ -67,7 +63,7 @@
   color: #0A4131;
 }
 
-/* Container and Cards */
+/* Container */
 .container h3{
   font-family: 'Lemon', cursive;
   font-size: 2em;
