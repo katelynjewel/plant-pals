@@ -8,7 +8,7 @@ function ListedPlantCard({setAllPlants, plant, user, plant : {name, price, sold,
   const avaialable = sold.toString() 
 
   return (
-    <Card.Group centered itemsPerRow={'three'}>
+    <Card.Group centered itemsPerRow={2}>
       <Card raised className='plantcard'>
         <Card.Content>
           <Image src={image} alt='plant'/>

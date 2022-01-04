@@ -5,7 +5,7 @@ import SearchBar from './SearchBar'
 function Home({ allPlants }) {
   const [search, setSearch] = useState("")
 
-  const filterPlants = allPlants.filter(plant => {
+  let filterPlants = allPlants.filter(plant => {
     return (
       plant.name.toLowerCase().includes(search.toLowerCase())
     )

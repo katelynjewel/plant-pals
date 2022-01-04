@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Project Title: 
+  Plant Pals
 
-Things you may want to cover:
 
-* Ruby version
+# Project Owner: 
+  Katelyn Richard 
+   - GitHub userName - katelynjewel 
 
-* System dependencies
+# Reason for the project: 
+  This project was built in order to apply and showcase the skills learned and developed during the totality of the Software Engineering Live class - FlatIron Bootcamp (class of 09/21). The technologies utilized range in use of Rails to build and create relationships between the backend database of the project, React to manipulate and change the DOM, and also the use of HTML and CSS to develop and design webpages.
 
-* Configuration
 
-* Database creation
+# Project Description: 
+  Plant Pals is a online market for individuals to post, sell, and purchase plants from others. This app is a dedicated platform to buy, sell, and trade plants. After login or sign up, the page is redirected to the home page that shows all listed plants on the site. There is a search function that allows a user to look for a specific plant by name. 
 
-* Database initialization
+  As well as browse plants, a user can add their own plants on the post plant page. On the listed plants page, a user can browse and edit all of the plants they have posted on the site as well as mark a plant "Sold". The plant edit utiziles ActiveStorage to allow users to upload a photo file image directly to the site. 
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+# Learnings and Struggles:
+  This project was the first one that I, Katelyn, tackled independtly. Some struggles that frequently occured were generally around a few new technologies being utilized such as ActiveStorage to allow direct file uploads as well as websockets and polymorphism for the messaging aspect of the project that wasn't quite finished by presentation. The messaging aspect is inherent to the apps design and will be added to the project in the near future. However, some strong learning curves were with working with Semantic UI on many aspects of the project such as modals for login, signup, and edit forms. 
 
-* Deployment instructions
-
-* ...
+# Acknowledgments:
+  Numerous resources both from the FlatIron curriculum and those available for free online. These reasources, as well as support from FlatIron staff and students, helped expand knowledge and practice many new skills.

@@ -1,8 +1,8 @@
-import { Search } from 'semantic-ui-react'
+import { Input } from 'semantic-ui-react'
 
 function SearchBar({search, setSearch}) {
   return (
-    <Search 
+    <Input 
       className='search'
       type='text'
       value={search}
