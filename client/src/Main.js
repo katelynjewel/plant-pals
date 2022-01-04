@@ -8,12 +8,21 @@ import Home from './Home'
 
 function Main({user, setUser}) {
   const [allPlants, setAllPlants] = useState([])
+  const [search, setSearch] = useState("")
 
   useEffect(()=> {
     fetch('/plants')
     .then((resp)=> resp.json())
     .then((allPlants) => setAllPlants(allPlants))
   },[])
+
+  let filterPlants = allPlants.filter(plant => {
+    return (
+      plant.name.toLowerCase().includes(search.toLowerCase())
+      ||
+      plant.details.toLowerCase().includes(search.toLowerCase())
+    )
+  }) 
 
   return (
     <div>
@@ -23,10 +32,10 @@ function Main({user, setUser}) {
             <Landing/>
           </Route>
           <Route exact path='/home'>
-            <Home allPlants={allPlants} />
+            <Home allPlants={filterPlants} search={search} setSearch={setSearch}/>
           </Route>
           <Route exact path='/listed-plants'>
-            <ListedPlantContainer user={user} allPlants={allPlants} setAllPlants={setAllPlants} />
+            <ListedPlantContainer user={user} allPlants={filterPlants} setAllPlants={setAllPlants} search={search} setSearch={setSearch}/>
           </Route>
           <Route exact path='/post-plant'>
             <AddPlant user={user} setAllPlants={setAllPlants}/>

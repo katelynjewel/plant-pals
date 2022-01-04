@@ -1,20 +1,12 @@
-import { useState } from 'react'
 import PlantContainer from './PlantContainer'
 import SearchBar from './SearchBar'
 
-function Home({ allPlants }) {
-  const [search, setSearch] = useState("")
-
-  let filterPlants = allPlants.filter(plant => {
-    return (
-      plant.name.toLowerCase().includes(search.toLowerCase())
-    )
-  })
+function Home({allPlants, search, setSearch}) {
 
   return (
     <div>
       <SearchBar search={search} setSearch={setSearch} />
-      <PlantContainer allPlants={filterPlants}/>
+      <PlantContainer allPlants={allPlants}/>
     </div>
   )
 }
